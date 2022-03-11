@@ -5,20 +5,20 @@
 class ReleaseCli < Formula
   desc "CLI for Release (releasehub.com)"
   homepage "https://releasehub.com/"
-  version "0.2.0-beta5"
+  version "0.2.0-beta6"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta5/release_0.2.0-beta5_Darwin_arm64.tar.gz"
-      sha256 "5fa3a4c0557346f0896e13b5f30cf2f67e054683a6dbbb185541220e432b3514"
+    if Hardware::CPU.intel?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta6/release_0.2.0-beta6_Darwin_x86_64.tar.gz"
+      sha256 "85d813c8ea30c50109fdb57d08143f0e16da53c2fafb8179d6d6c26d9db00670"
 
       def install
         bin.install "release"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta5/release_0.2.0-beta5_Darwin_x86_64.tar.gz"
-      sha256 "75128042996237158f27ccebee1f09eefc813f4bf70579b0cbede95b4ac5bd2b"
+    if Hardware::CPU.arm?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta6/release_0.2.0-beta6_Darwin_arm64.tar.gz"
+      sha256 "26e2e70ecfc0bdf79ddaa487fd881182bef28f945b06dbc82d28dbf6df5cc4a4"
 
       def install
         bin.install "release"
@@ -27,17 +27,17 @@ class ReleaseCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta5/release_0.2.0-beta5_Linux_x86_64.tar.gz"
-      sha256 "db587ea1b57c633899a2a2026e4f7d3f901c45c5009dc6e7f797e8d8192c4a3d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta6/release_0.2.0-beta6_Linux_arm64.tar.gz"
+      sha256 "79ff9e90d9e5db70ce2d22fc129470d373ead6c2d227324d7f104d7fc12f1136"
 
       def install
         bin.install "release"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta5/release_0.2.0-beta5_Linux_arm64.tar.gz"
-      sha256 "ee70b6ce8e87e50f059ffc3acff3bed40317aacb00d7eb99e6ee8321ac3381db"
+    if Hardware::CPU.intel?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta6/release_0.2.0-beta6_Linux_x86_64.tar.gz"
+      sha256 "3551972d639740eefcf515e7b45137a720a2f170ba6a83d3c30fb18f5bd89bc4"
 
       def install
         bin.install "release"
