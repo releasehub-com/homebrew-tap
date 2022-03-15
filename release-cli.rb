@@ -5,20 +5,20 @@
 class ReleaseCli < Formula
   desc "CLI for Release (releasehub.com)"
   homepage "https://releasehub.com/"
-  version "0.2.0-beta9"
+  version "0.2.0-beta11"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Darwin_arm64.tar.gz"
-      sha256 "1333d4ca36419a7467ec834645966fecfa3a7a3a145a4a7bd06218cbe36d1090"
+    if Hardware::CPU.intel?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta11/release_0.2.0-beta11_Darwin_x86_64.tar.gz"
+      sha256 "3b24edb1398307fa494dee9875fbf0e43cbbcfea6c46863926726aca4ae5cc90"
 
       def install
         bin.install "release"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Darwin_x86_64.tar.gz"
-      sha256 "21553557043880c5635f61c2f1122907ac8826a4c5f2b120fdfdd0fdfe15146b"
+    if Hardware::CPU.arm?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta11/release_0.2.0-beta11_Darwin_arm64.tar.gz"
+      sha256 "41c401096f97469e25566f643b5dc89ccc3c2dec9b2ec193b12b92e304064d0b"
 
       def install
         bin.install "release"
@@ -27,17 +27,17 @@ class ReleaseCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Linux_arm64.tar.gz"
-      sha256 "f115fc585777a8a2997508e9f25d3a5484571a69aedf31d1d96c57a699b27060"
+    if Hardware::CPU.intel?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta11/release_0.2.0-beta11_Linux_x86_64.tar.gz"
+      sha256 "d0cb3170947725166698a9994778dac58bb6a888b0bec71563a1385fa4b50d14"
 
       def install
         bin.install "release"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Linux_x86_64.tar.gz"
-      sha256 "45ecbe8512f2e2c046b94a65cf618ef4305d012bc729e1148e8308e3f6e46255"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta11/release_0.2.0-beta11_Linux_arm64.tar.gz"
+      sha256 "29e32d943f0a06424ab124d7be695ced83e1f388a8ba3b789c8c5c1188e95876"
 
       def install
         bin.install "release"
