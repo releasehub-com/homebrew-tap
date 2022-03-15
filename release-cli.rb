@@ -5,42 +5,90 @@
 class ReleaseCli < Formula
   desc "CLI for Release (releasehub.com)"
   homepage "https://releasehub.com/"
-  version "0.2.0-beta1"
+  version "0.2.0-beta2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta1/release_0.2.0-beta1_Darwin_arm64.tar.gz"
-      sha256 "8bbaa869a5f55bbfd4afb90bdd0cc56a3b5155a1852bedb52f8f5d5c5f07f346"
+    if Hardware::CPU.intel?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta2/release_0.2.0-beta2_Darwin_x86_64.tar.gz"
+      sha256 "0f428da2e6039d3f586c742e6d067115e59f647dcb8c9f2586fdb191d168eaeb"
 
       def install
         bin.install "release"
+
+        # Install bash completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "bash")
+        (bash_completion/"release").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "zsh")
+        (zsh_completion/"_release").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "fish")
+        (fish_completion/"release.fish").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta1/release_0.2.0-beta1_Darwin_x86_64.tar.gz"
-      sha256 "233b6c99818c17e0e4663f9b62382d324ff08cee8d30a747a58c86b9ed09e641"
+    if Hardware::CPU.arm?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta2/release_0.2.0-beta2_Darwin_arm64.tar.gz"
+      sha256 "9cd9495f4c109e35571f2c219d18471ffe544c23be220d06809364722a058a85"
 
       def install
         bin.install "release"
+
+        # Install bash completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "bash")
+        (bash_completion/"release").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "zsh")
+        (zsh_completion/"_release").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "fish")
+        (fish_completion/"release.fish").write output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta1/release_0.2.0-beta1_Linux_arm64.tar.gz"
-      sha256 "e6eb55fdd3e14f9b5d217cdad6f1791796c5d369efe3f2b0b086006544e30925"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta2/release_0.2.0-beta2_Linux_arm64.tar.gz"
+      sha256 "8d6b6c8696ed631f5744e2eaec08d91687e6260b1a42f4c421831b772bce3320"
 
       def install
         bin.install "release"
+
+        # Install bash completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "bash")
+        (bash_completion/"release").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "zsh")
+        (zsh_completion/"_release").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "fish")
+        (fish_completion/"release.fish").write output
       end
     end
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta1/release_0.2.0-beta1_Linux_x86_64.tar.gz"
-      sha256 "186f510f16faac38cbb951fe501c55572fb983255b0d5a6801ce61187a5371d1"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.2.0-beta2/release_0.2.0-beta2_Linux_x86_64.tar.gz"
+      sha256 "84cb4bee68cee1e046ef9007f2179727b12839fa837285cfe74a5ee5ee704c67"
 
       def install
         bin.install "release"
+
+        # Install bash completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "bash")
+        (bash_completion/"release").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "zsh")
+        (zsh_completion/"_release").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "fish")
+        (fish_completion/"release.fish").write output
       end
     end
   end
