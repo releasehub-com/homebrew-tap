@@ -5,20 +5,20 @@
 class ReleaseCli < Formula
   desc "CLI for Release (releasehub.com)"
   homepage "https://releasehub.com/"
-  version "0.2.0-beta8"
+  version "0.2.0-beta9"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta8/release_0.2.0-beta8_Darwin_arm64.tar.gz"
-      sha256 "22a0534d305ab36b2bec706ab324e893c91e86b06635c6358c1d3b8a84ec9f23"
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Darwin_arm64.tar.gz"
+      sha256 "1333d4ca36419a7467ec834645966fecfa3a7a3a145a4a7bd06218cbe36d1090"
 
       def install
         bin.install "release"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta8/release_0.2.0-beta8_Darwin_x86_64.tar.gz"
-      sha256 "c8f22d87923f09bde28e847eda4b6f5462c01deb1dec90c21504053ab6d898cd"
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Darwin_x86_64.tar.gz"
+      sha256 "21553557043880c5635f61c2f1122907ac8826a4c5f2b120fdfdd0fdfe15146b"
 
       def install
         bin.install "release"
@@ -28,16 +28,16 @@ class ReleaseCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta8/release_0.2.0-beta8_Linux_arm64.tar.gz"
-      sha256 "b14dcf2dcb5b61271d9795c9475a598d75bd6d652598c38aee42d3e87563e296"
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Linux_arm64.tar.gz"
+      sha256 "f115fc585777a8a2997508e9f25d3a5484571a69aedf31d1d96c57a699b27060"
 
       def install
         bin.install "release"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta8/release_0.2.0-beta8_Linux_x86_64.tar.gz"
-      sha256 "d571670c7dd8b2911edd0ee795468a94247d99ccf27c78f4f7bbb15d0cb57784"
+      url "https://github.com/releasehub-com/cli/releases/download/v0.2.0-beta9/release_0.2.0-beta9_Linux_x86_64.tar.gz"
+      sha256 "45ecbe8512f2e2c046b94a65cf618ef4305d012bc729e1148e8308e3f6e46255"
 
       def install
         bin.install "release"
