@@ -10,7 +10,7 @@ class ReleaseCli < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://release-cli.s3.us-west-2.amazonaws.com/v0.4.0-beta1/release_0.4.0-beta1_Darwin_arm64.tar.gz"
-      sha256 "9472176bd5145af247c33160c40b89f5fbcf700c03fd681c6cefb0ddcd71d9cb"
+      sha256 "b9a8b0a29b4ac8ebdd2a2f2b234c30b303f483c9464daaa10ab4a41dbc27f4b3"
 
       def install
         bin.install "release"
@@ -30,7 +30,7 @@ class ReleaseCli < Formula
     end
     if Hardware::CPU.intel?
       url "https://release-cli.s3.us-west-2.amazonaws.com/v0.4.0-beta1/release_0.4.0-beta1_Darwin_x86_64.tar.gz"
-      sha256 "7f62cb929d3683029eab0b9dd648a194ac2646bb40b86228522ef816922cd862"
+      sha256 "b5ddb48524d60f04b4fb21ce865f851ddeb4457bc38d92506d829490f97b6757"
 
       def install
         bin.install "release"
@@ -51,9 +51,9 @@ class ReleaseCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.4.0-beta1/release_0.4.0-beta1_Linux_x86_64.tar.gz"
-      sha256 "be778c1f27269de6523097717ca038b3f2cfd987414b63bbef3e073900903a78"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.4.0-beta1/release_0.4.0-beta1_Linux_arm64.tar.gz"
+      sha256 "78c07cf1b28acf2cee443bf32e5e651b9bd76247b8245b10ae80096416bf6574"
 
       def install
         bin.install "release"
@@ -71,9 +71,9 @@ class ReleaseCli < Formula
         (fish_completion/"release.fish").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.4.0-beta1/release_0.4.0-beta1_Linux_arm64.tar.gz"
-      sha256 "4b68cd4413336ad71f49ecd9ab28b5cc0661ee32a72d341de0dd91247e0130fa"
+    if Hardware::CPU.intel?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.4.0-beta1/release_0.4.0-beta1_Linux_x86_64.tar.gz"
+      sha256 "88adecff75aa1d88237e4e263b70f08a90fedc93f82527e47da5a4276ac82d4e"
 
       def install
         bin.install "release"
