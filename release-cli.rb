@@ -5,12 +5,12 @@
 class ReleaseCli < Formula
   desc "CLI for Release (releasehub.com)"
   homepage "https://releasehub.com/"
-  version "0.11.2-beta"
+  version "0.12-beta"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.11.2-beta/release_0.11.2-beta_Darwin_arm64.tar.gz"
-      sha256 "ac625fc65ee02902c6801904074fe6b7d7aba9e13f4ab36d0f95bacd0b1ffae0"
+    if Hardware::CPU.intel?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.12-beta/release_0.12-beta_Darwin_x86_64.tar.gz"
+      sha256 "2dfd3fdfd5502ac9677fde21c9c37dc40bc590f374a11208c97b8c1ff2a7771a"
 
       def install
         bin.install "release"
@@ -28,9 +28,9 @@ class ReleaseCli < Formula
         (fish_completion/"release.fish").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.11.2-beta/release_0.11.2-beta_Darwin_x86_64.tar.gz"
-      sha256 "0118fbf013ca87c87d5fc6fb2038711f3b3210552981712d9576adba83087450"
+    if Hardware::CPU.arm?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.12-beta/release_0.12-beta_Darwin_arm64.tar.gz"
+      sha256 "459fd381337e96ff447eb2f5badfba7a313a050623867969a582ea0953450c2a"
 
       def install
         bin.install "release"
@@ -51,9 +51,9 @@ class ReleaseCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.11.2-beta/release_0.11.2-beta_Linux_x86_64.tar.gz"
-      sha256 "2fac71c90b2214bb93469586b8acfc3d9a41cf88114b28568e2f7e2d9c605a79"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.12-beta/release_0.12-beta_Linux_arm64.tar.gz"
+      sha256 "4996c70f2642805499c90ae0f0c9547bc3fefb5b21267a8aac27b7b2c3b348c3"
 
       def install
         bin.install "release"
@@ -71,9 +71,9 @@ class ReleaseCli < Formula
         (fish_completion/"release.fish").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.11.2-beta/release_0.11.2-beta_Linux_arm64.tar.gz"
-      sha256 "ad4aae63acb3049898c78dc6d4761d2276f30a3b35c323bcecb7af96020b124a"
+    if Hardware::CPU.intel?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.12-beta/release_0.12-beta_Linux_x86_64.tar.gz"
+      sha256 "3ed0a50da61d1f3fd5f30db48e190e6ce9afa8592b898364759b06b0ba5cf1d6"
 
       def install
         bin.install "release"
