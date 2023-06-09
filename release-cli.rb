@@ -5,12 +5,12 @@
 class ReleaseCli < Formula
   desc "CLI for Release (release.com)"
   homepage "https://release.com/"
-  version "0.20.4-beta"
+  version "0.20.5-beta"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.4-beta/release_0.20.4-beta_Darwin_arm64.tar.gz"
-      sha256 "94f210c69132686e1b47351bf9796c5000672ed59e8bfde13ba8e0e22bf2d4fa"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.5-beta/release_0.20.5-beta_Darwin_arm64.tar.gz"
+      sha256 "2fed33af70a9734b2dc645f641c772056d45ba324709e257c3d015df3308c8fc"
 
       def install
         bin.install "release"
@@ -29,8 +29,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.4-beta/release_0.20.4-beta_Darwin_x86_64.tar.gz"
-      sha256 "847dea504e051900b1f318551c200643271466063617733c6502f0c1c019ee88"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.5-beta/release_0.20.5-beta_Darwin_x86_64.tar.gz"
+      sha256 "647dd3491d87a10a89897520c9cc315364b498ed9d3f278e5f192f4a654f7a45"
 
       def install
         bin.install "release"
@@ -52,8 +52,8 @@ class ReleaseCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.4-beta/release_0.20.4-beta_Linux_x86_64.tar.gz"
-      sha256 "f6641516436caf6d41a3aab4cff5cf93ce3495692faf5d43b59404b4866e46eb"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.5-beta/release_0.20.5-beta_Linux_x86_64.tar.gz"
+      sha256 "e7c904cdb7593cff22eaf834341254e224582e7910d6b689b161c583f6c895b2"
 
       def install
         bin.install "release"
@@ -72,8 +72,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.4-beta/release_0.20.4-beta_Linux_arm64.tar.gz"
-      sha256 "f3cc28d47d36207a6221bc065263a977e722513ebea46c66ff06416ec7a5be12"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.20.5-beta/release_0.20.5-beta_Linux_arm64.tar.gz"
+      sha256 "3dd05b3039b3c4af89d79551ae0e8115bd1aeceefba596643c92d1fdb4d4a03a"
 
       def install
         bin.install "release"
