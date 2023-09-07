@@ -5,11 +5,11 @@
 class ReleaseCli < Formula
   desc "CLI for Release (release.com)"
   homepage "https://release.com/"
-  version "0.24.1-beta"
+  version "0.24.2-beta"
 
   on_macos do
-    url "https://release-cli.s3.us-west-2.amazonaws.com/v0.24.1-beta/release_0.24.1-beta_Darwin_x86_64.tar.gz"
-    sha256 "68ebf4be171bc7214b559ca38d28cb18d88bcb3eb4d4f9bc96034c781104ccae"
+    url "https://release-cli.s3.us-west-2.amazonaws.com/v0.24.2-beta/release_0.24.2-beta_Darwin_x86_64.tar.gz"
+    sha256 "7e84f5f3c13ebcabcb84d539f8deec369b9fa750e61dbf67c9d476a79d3285af"
 
     def install
       bin.install "release"
@@ -39,9 +39,9 @@ class ReleaseCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.24.1-beta/release_0.24.1-beta_Linux_arm64.tar.gz"
-      sha256 "e6e3ba2e5bd3ece9dc71c1398e1ff2f4c1bf36380258291758bcd542914ae433"
+    if Hardware::CPU.intel?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.24.2-beta/release_0.24.2-beta_Linux_x86_64.tar.gz"
+      sha256 "495b17c05133e444b6e4b88d16a4490a9228af524200c39997b9ea185820c475"
 
       def install
         bin.install "release"
@@ -59,9 +59,9 @@ class ReleaseCli < Formula
         (fish_completion/"release.fish").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.24.1-beta/release_0.24.1-beta_Linux_x86_64.tar.gz"
-      sha256 "f66bc2aad4c34727bdf1f36fcb8c81fe27a402d52d7ceabf466f7230b3f28f65"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.24.2-beta/release_0.24.2-beta_Linux_arm64.tar.gz"
+      sha256 "0a48a819bd767266c4a0352696247c9abc4b40f2c0f6debdf4e40418c9ed0b93"
 
       def install
         bin.install "release"
