@@ -5,11 +5,11 @@
 class ReleaseCli < Formula
   desc "CLI for Release (release.com)"
   homepage "https://release.com/"
-  version "0.29.0-beta"
+  version "0.30.0-beta"
 
   on_macos do
-    url "https://release-cli.s3.us-west-2.amazonaws.com/v0.29.0-beta/release_0.29.0-beta_Darwin_x86_64.tar.gz"
-    sha256 "ff39d71765d335ef1e99b4701cb139cf80ff103998db98fc16939318c8a4cb9e"
+    url "https://release-cli.s3.us-west-2.amazonaws.com/v0.30.0-beta/release_0.30.0-beta_Darwin_x86_64.tar.gz"
+    sha256 "7e096343c76025b0fe7576d29ddd8765fc139aafdcce4a17894c9d5a41639a9b"
 
     def install
       bin.install "release"
@@ -40,8 +40,8 @@ class ReleaseCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.29.0-beta/release_0.29.0-beta_Linux_x86_64.tar.gz"
-      sha256 "a3d081be1f4ad9975f0f92f0e970418503d6a9a99de5cbec8fdd1d7b060ebb44"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.30.0-beta/release_0.30.0-beta_Linux_x86_64.tar.gz"
+      sha256 "b83b95312f35fb760078a7aff313c41e85fdb2380541f0d9ac7ebe312b80baa9"
 
       def install
         bin.install "release"
@@ -60,8 +60,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.29.0-beta/release_0.29.0-beta_Linux_arm64.tar.gz"
-      sha256 "771966784bf32cd60ac6ef87b40a4c4cbe264ad43294cb9b161bd130756e80c6"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.30.0-beta/release_0.30.0-beta_Linux_arm64.tar.gz"
+      sha256 "f2fd5bd47e4a83aa7bf91e6822f0c08bd7908f0425dc824fa8dd4145a611de34"
 
       def install
         bin.install "release"
