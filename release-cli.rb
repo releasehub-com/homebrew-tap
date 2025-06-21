@@ -5,12 +5,12 @@
 class ReleaseCli < Formula
   desc "CLI for Release (release.com)"
   homepage "https://release.com/"
-  version "0.35.0-beta"
+  version "0.35.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_darwin_amd64.tar.gz"
-      sha256 "fdc3caa1c42c7e86b86deb04c59f6604f1e2f121d19f2b18b00ec2e35083b1eb"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0/release_0.35.0_darwin_amd64.tar.gz"
+      sha256 "712e4b615ee87b4960349334879dd80b52d13ad31c5a31790555d59547d2afa4"
 
       def install
         bin.install "release"
@@ -29,8 +29,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_darwin_arm64.tar.gz"
-      sha256 "181ae9fb751600c6934b6d40bd82f44979e25361a814fe403b1d69f6c28dff9f"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0/release_0.35.0_darwin_arm64.tar.gz"
+      sha256 "84e2e96e188d64c568ad9d42d1ec7d1e7f93cf97a2bfcd29ed38bd5b44b26fb1"
 
       def install
         bin.install "release"
@@ -52,8 +52,8 @@ class ReleaseCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_linux_amd64.tar.gz"
-      sha256 "93060f3b785b2276d9f3e43ab144cf62e51df1b2de25f2fa1eed1e2a26f2dde6"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0/release_0.35.0_linux_amd64.tar.gz"
+      sha256 "056227d26046a1ff79edfbd63c6a62842bee512f6a4fa313bef3cdcccfe2646a"
       def install
         bin.install "release"
 
@@ -71,8 +71,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_linux_arm64.tar.gz"
-      sha256 "10c5e0f79aa3c79955a7b19db72465057414c88a66de61468bd5b3780f0758fc"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0/release_0.35.0_linux_arm64.tar.gz"
+      sha256 "83408bacb7f5efceede4409bf4ab959682489a462909d4e3568e54243228f2f1"
       def install
         bin.install "release"
 
