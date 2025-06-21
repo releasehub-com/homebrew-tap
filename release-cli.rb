@@ -5,43 +5,12 @@
 class ReleaseCli < Formula
   desc "CLI for Release (release.com)"
   homepage "https://release.com/"
-  version "0.34.0-beta"
+  version "0.35.0-beta"
 
   on_macos do
-    url "https://release-cli.s3.us-west-2.amazonaws.com/v0.34.0-beta/release_0.34.0-beta_Darwin_x86_64.tar.gz"
-    sha256 "c39ef139cd435273073746cd544d1b7c3097e925c4c763e956d5c13679babaa4"
-
-    def install
-      bin.install "release"
-
-      # Install bash completion
-      output = Utils.safe_popen_read(bin/"release", "completion", "bash")
-      (bash_completion/"release").write output
-
-      # Install zsh completion
-      output = Utils.safe_popen_read(bin/"release", "completion", "zsh")
-      (zsh_completion/"_release").write output
-
-      # Install fish completion
-      output = Utils.safe_popen_read(bin/"release", "completion", "fish")
-      (fish_completion/"release.fish").write output
-    end
-
-    if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the ReleaseCli
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
-      end
-    end
-  end
-
-  on_linux do
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.34.0-beta/release_0.34.0-beta_Linux_x86_64.tar.gz"
-      sha256 "b8b1f5be16cb21d6e94e1feb30acb403b0fda306ccbf1420d7da40b7ad202eed"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_darwin_amd64.tar.gz"
+      sha256 "fdc3caa1c42c7e86b86deb04c59f6604f1e2f121d19f2b18b00ec2e35083b1eb"
 
       def install
         bin.install "release"
@@ -59,10 +28,51 @@ class ReleaseCli < Formula
         (fish_completion/"release.fish").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.34.0-beta/release_0.34.0-beta_Linux_arm64.tar.gz"
-      sha256 "4e98c5e0515b5aeaa40be6c2513205d0ef438c1c1a369fb59ebd3e704bb3ed90"
+    if Hardware::CPU.arm?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_darwin_arm64.tar.gz"
+      sha256 "181ae9fb751600c6934b6d40bd82f44979e25361a814fe403b1d69f6c28dff9f"
 
+      def install
+        bin.install "release"
+
+        # Install bash completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "bash")
+        (bash_completion/"release").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "zsh")
+        (zsh_completion/"_release").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "fish")
+        (fish_completion/"release.fish").write output
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_linux_amd64.tar.gz"
+      sha256 "93060f3b785b2276d9f3e43ab144cf62e51df1b2de25f2fa1eed1e2a26f2dde6"
+      def install
+        bin.install "release"
+
+        # Install bash completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "bash")
+        (bash_completion/"release").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "zsh")
+        (zsh_completion/"_release").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read(bin/"release", "completion", "fish")
+        (fish_completion/"release.fish").write output
+      end
+    end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.35.0-beta/release_0.35.0-beta_linux_arm64.tar.gz"
+      sha256 "10c5e0f79aa3c79955a7b19db72465057414c88a66de61468bd5b3780f0758fc"
       def install
         bin.install "release"
 
