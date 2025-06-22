@@ -5,12 +5,12 @@
 class ReleaseCli < Formula
   desc "CLI for Release (release.com)"
   homepage "https://release.com/"
-  version "0.36.0"
+  version "0.36.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.0/release_0.36.0_darwin_amd64.tar.gz"
-      sha256 "45257c9fb68393e07326e18c1499426951fc3239927216c9f1f390eb7896977f"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.1/release_0.36.1_darwin_amd64.tar.gz"
+      sha256 "a090c6aa8fc9c49a7efc505ba5d85d128124c910ef863bbe9e917210ed4113d4"
 
       def install
         bin.install "release"
@@ -29,8 +29,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.0/release_0.36.0_darwin_arm64.tar.gz"
-      sha256 "abe93be7dde14ce3462c23362e5398c076f11ff463c817cac4920b56e7e450fe"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.1/release_0.36.1_darwin_arm64.tar.gz"
+      sha256 "cf06f016cd390e0c75df11f8ad7e401757be7c44af52d8f351c7c5935c90abcd"
 
       def install
         bin.install "release"
@@ -52,8 +52,8 @@ class ReleaseCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.0/release_0.36.0_linux_amd64.tar.gz"
-      sha256 "3c57e16cf9827ec01fa2fb4262c2697fd9fea5242d451e8b1990c542b3678fc3"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.1/release_0.36.1_linux_amd64.tar.gz"
+      sha256 "3d23d668c5ae5922477db7afdce4aac851dad02970a59fc755a2381af2695925"
       def install
         bin.install "release"
 
@@ -71,8 +71,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.0/release_0.36.0_linux_arm64.tar.gz"
-      sha256 "28d5867e7e850f842972417b6e748a50b57457ba651bb9606279f59d0fd680d7"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.36.1/release_0.36.1_linux_arm64.tar.gz"
+      sha256 "83205c423d9e3f9aadb15ce92812b0c519981536a952d115bbc8c051057cd1cd"
       def install
         bin.install "release"
 
