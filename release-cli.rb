@@ -5,12 +5,12 @@
 class ReleaseCli < Formula
   desc "CLI for Release (release.com)"
   homepage "https://release.com/"
-  version "0.39.0"
+  version "0.39.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.0/release_0.39.0_darwin_amd64.tar.gz"
-      sha256 "fbc99e757e2806e53cb1deddf0683b662a65ee497695d7c73d2e7c0c3bec93ec"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.1/release_0.39.1_darwin_amd64.tar.gz"
+      sha256 "4c452d4268cbd45399661480046d79f4e67b0f6b25f30aac18ac5ce276af0d38"
 
       def install
         bin.install "release"
@@ -29,8 +29,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.0/release_0.39.0_darwin_arm64.tar.gz"
-      sha256 "47bb3f945b7ee30babfbc7ae5d390ebbed1f94fc231236c84f7ac07e832ec587"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.1/release_0.39.1_darwin_arm64.tar.gz"
+      sha256 "3201531cb655927f0a40849808bcc54eb4a62cd5b9697b4910844f0fd385ac96"
 
       def install
         bin.install "release"
@@ -52,8 +52,8 @@ class ReleaseCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.0/release_0.39.0_linux_amd64.tar.gz"
-      sha256 "df8a9f5249e7e841a78b160ec1795e4b000c62e0789c8844bf70584563a79f07"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.1/release_0.39.1_linux_amd64.tar.gz"
+      sha256 "b948c092f1e2b1ed8db7f72a964babda5e83166e0062450a035cb7b7a5f85096"
       def install
         bin.install "release"
 
@@ -71,8 +71,8 @@ class ReleaseCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.0/release_0.39.0_linux_arm64.tar.gz"
-      sha256 "21da823cb7c5bc56b7d417403ac7693bed9a8a9deb58b23a1dafe7c4f62a3a2c"
+      url "https://release-cli.s3.us-west-2.amazonaws.com/v0.39.1/release_0.39.1_linux_arm64.tar.gz"
+      sha256 "fa1e885ae89380169e13e0cbd68df2afa809f797fb0982fdf54677b806d5ef51"
       def install
         bin.install "release"
 
